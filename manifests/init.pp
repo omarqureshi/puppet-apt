@@ -26,6 +26,10 @@ class apt {
     }
   }
 
+  package {$apt::params::keyring_package:
+    ensure => present,
+  }
+
   # ensure only files managed by puppet be present in this directory.
   file { "/etc/apt/sources.list.d":
     ensure  => directory,
